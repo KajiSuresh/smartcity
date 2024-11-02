@@ -2,7 +2,15 @@ import React from 'react';
 import { Heart } from 'lucide-react';
 import { Card, CardContent, } from '@/components/ui/card';
 
-const PropertyCard = ({ property }) => (
+const PropertyCard = ({ property }: { property: { 
+  id: number;
+  name: string;
+  location: string;
+  rating: string;
+  ratingText: string;
+  reviews: number;
+  imageUrl: string;
+}}) => (
   <Card className="overflow-hidden group">
     <div className="relative">
       <img

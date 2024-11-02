@@ -1,7 +1,12 @@
 import React from 'react';
 import { ChevronRight, Heart, Umbrella, Building2, Tent, Coffee } from 'lucide-react';
 
-const TravelCard = ({ image, title, description, size = "medium" }) => (
+const TravelCard = ({ image, title, description, size = "medium" }: {
+  image: string;
+  title: string; 
+  description: string;
+  size?: "medium" | "large";
+}) => (
   <div className={`flex-shrink-0 relative group cursor-pointer 
     ${size === "large" ? "w-full md:w-[800px]" : "w-[300px]"}`}>
     <div className={`relative overflow-hidden rounded-lg
@@ -21,7 +26,15 @@ const TravelCard = ({ image, title, description, size = "medium" }) => (
   </div>
 );
 
-const CategoryButton = ({ icon: Icon, label, active }) => (
+const CategoryButton = ({ 
+  icon: Icon, 
+  label,
+  active 
+}: {
+  icon: React.ElementType;
+  label: string;
+  active: boolean;
+}) => (
   <button 
     className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-colors
     ${active 
@@ -83,7 +96,13 @@ const Tab = () => {
           <div className="overflow-x-auto pb-4 scrollbar-hide">
             <div className="flex gap-4">
               {inspirationCards.map((card, index) => (
-                <TravelCard key={index} {...card} />
+                <TravelCard 
+                  key={index} 
+                  image={card.image}
+                  title={card.title} 
+                  description={card.description}
+                  size={card.size as "medium" | "large" | undefined}
+                />
               ))}
             </div>
           </div>
