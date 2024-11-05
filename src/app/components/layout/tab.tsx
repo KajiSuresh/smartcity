@@ -38,7 +38,7 @@ const CategoryButton = ({
   <button 
     className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-colors
     ${active 
-      ? "bg-blue-600 text-white border-blue-600" 
+      ? "bg-gradient-to-r from-red-500 to-red-400 text-white border-blue-600" 
       : "bg-white text-gray-700 border-gray-300 hover:border-blue-600"
     }`}
   >

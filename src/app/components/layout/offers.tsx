@@ -1,6 +1,7 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
 import { Card, CardContent, } from '@/components/ui/card';
+import Link from 'next/link';
 
 const PropertyCard = ({ property }: { property: { 
   id: number;
@@ -11,30 +12,32 @@ const PropertyCard = ({ property }: { property: {
   reviews: number;
   imageUrl: string;
 }}) => (
-  <Card className="overflow-hidden group">
-    <div className="relative">
-      <img
-        src={property.imageUrl}
-        alt={property.name}
-        className="w-full h-48 object-cover"
-      />
-      <button className="absolute top-2 right-2 p-1 rounded-full bg-white/80 hover:bg-white transition-colors">
-        <Heart className="w-5 h-5 text-gray-600" />
-      </button>
-    </div>
-    <CardContent className="p-4">
-      <h3 className="font-semibold text-lg">{property.name}</h3>
-      <p className="text-gray-600 text-sm">{property.location}</p>
-      <div className="flex items-center mt-2 gap-2">
-        <span className="bg-blue-600 text-white px-2 py-1 rounded-md text-sm">
-          {property.rating}
-        </span>
-        <span className="text-sm font-medium">
-          {property.ratingText} · {property.reviews} reviews
-        </span>
+  <Link href="/filter" className="block">
+    <Card className="overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow">
+      <div className="relative">
+        <img
+          src={property.imageUrl}
+          alt={property.name}
+          className="w-full h-48 object-cover"
+        />
+        <button className="absolute top-2 right-2 p-1 rounded-full bg-white/80 hover:bg-white transition-colors">
+          <Heart className="w-5 h-5 text-gray-600" />
+        </button>
       </div>
-    </CardContent>
-  </Card>
+      <CardContent className="p-4">
+        <h3 className="font-semibold text-lg">{property.name}</h3>
+        <p className="text-gray-600 text-sm">{property.location}</p>
+        <div className="flex items-center mt-2 gap-2">
+          <span className="bg-gradient-to-r from-red-500 to-red-400 text-white px-2 py-1 rounded-md text-sm">
+            {property.rating}
+          </span>
+          <span className="text-sm font-medium">
+            {property.ratingText} · {property.reviews} reviews
+          </span>
+        </div>
+      </CardContent>
+    </Card>
+  </Link>
 );
 
 const Offers = () => {
@@ -86,7 +89,7 @@ const Offers = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {properties.map(property => (
-          <PropertyCard key={property.id} property={property} />
+          <PropertyCard key={property.id} property={property}  />
         ))}
       </div>
 
@@ -108,7 +111,7 @@ const Offers = () => {
                   <p className="text-gray-600">
                     Finish your year with a mini break. Save 15% or more when you book and stay by 7 January 2025.
                   </p>
-                  <button className="mt-4 px-6 py-2.5 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors">
+                  <button className="mt-4 px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-400 text-white font-medium rounded-md hover:bg-blue-700 transition-colors">
                     Find Late Escape Deals
                   </button>
                 </div>

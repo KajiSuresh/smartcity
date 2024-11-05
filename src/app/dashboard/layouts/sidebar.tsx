@@ -36,14 +36,14 @@ export function Sidebar({ isOpen }: SidebarProps) {
       href: "/analytics",
     },
     {
-      label: "Customers",
+      label: "User",
       icon: Users,
-      href: "/dashboard/customers",
+      href: "/dashboard/user",
     },
     {
       label: "Products",
       icon: Package,
-      href: "/products",
+      href: "/dashbord/products",
     },
     {
       label: "Orders",

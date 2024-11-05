@@ -47,10 +47,65 @@ const customers = [
     totalSpent: "$4,562",
     orders: 24,
     status: "inactive"
-  }
+  },
+  {
+    id: "3",
+    name: "Michael Johnson",
+    email: "michael@example.com",
+    image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=32&h=32&q=80",
+    totalSpent: "$4,562",
+    orders: 24,
+    status: "inactive"
+  },
+  {
+    id: "3",
+    name: "Michael Johnson",
+    email: "michael@example.com",
+    image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=32&h=32&q=80",
+    totalSpent: "$4,562",
+    orders: 24,
+    status: "inactive"
+  },
+  {
+    id: "3",
+    name: "Michael Johnson",
+    email: "michael@example.com",
+    image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=32&h=32&q=80",
+    totalSpent: "$4,562",
+    orders: 24,
+    status: "inactive"
+  },
+  {
+    id: "3",
+    name: "Michael Johnson",
+    email: "michael@example.com",
+    image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=32&h=32&q=80",
+    totalSpent: "$4,562",
+    orders: 24,
+    status: "inactive"
+  },
+  {
+    id: "3",
+    name: "Michael Johnson",
+    email: "michael@example.com",
+    image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=32&h=32&q=80",
+    totalSpent: "$4,562",
+    orders: 24,
+    status: "inactive"
+  },
+  {
+    id: "3",
+    name: "Michael Johnson",
+    email: "michael@example.com",
+    image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=32&h=32&q=80",
+    totalSpent: "$4,562",
+    orders: 24,
+    status: "inactive"
+  },
+  
 ]
 
-export function CustomerTable() {
+export function UserTable() {
   return (
     <div className="rounded-md border">
       <Table>
