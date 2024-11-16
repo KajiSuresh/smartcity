@@ -37,7 +37,7 @@ const SearchBar = () => {
               variant="outline"
               className={`
                 bg-white hover:bg-gray-50 transition-all duration-200
-                ${activeButton === label 
+                ${activeButton === label
                   ? 'border-blue-500 border-2 text-blue-600 shadow-md scale-105' 
                   : 'border-gray-200 text-gray-600 hover:border-blue-300'}
                 flex items-center gap-2 px-6 py-3 rounded-full
@@ -109,4 +109,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default SearchBar; 
