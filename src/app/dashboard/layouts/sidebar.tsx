@@ -4,15 +4,15 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { 
-  BarChart3, 
+ 
   Users, 
-  Settings, 
+ 
   Package, 
   LayoutDashboard,
   MessagesSquare,
   ShoppingCart,
   FileText,
-  HelpCircle
+
 } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -30,46 +30,33 @@ export function Sidebar({ isOpen }: SidebarProps) {
       icon: LayoutDashboard,
       href: "/dashboard",
     },
-    {
-      label: "Analytics",
-      icon: BarChart3,
-      href: "/analytics",
-    },
+    
     {
       label: "User",
       icon: Users,
       href: "/dashboard/user",
     },
     {
-      label: "Products",
+      label: "Tourism",
       icon: Package,
-      href: "/dashbord/products",
+      href: "/dashboard/tourism",
     },
     {
-      label: "Orders",
+      label: "Business",
       icon: ShoppingCart,
-      href: "/orders",
+      href: "/dashboard/business",
     },
     {
-      label: "Messages",
+      label: "Job",
       icon: MessagesSquare,
-      href: "/messages",
+      href: "/dashboard/job",
     },
     {
-      label: "Documents",
+      label: "Student",
       icon: FileText,
-      href: "/documents",
+      href: "/dashboard/student",
     },
-    {
-      label: "Settings",
-      icon: Settings,
-      href: "/settings",
-    },
-    {
-      label: "Help",
-      icon: HelpCircle,
-      href: "/help",
-    },
+    
   ]
 
   return (

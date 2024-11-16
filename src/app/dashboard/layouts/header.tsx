@@ -1,22 +1,28 @@
-"use client"
+"use client";
 
-import { Bell, Menu, Moon, Search, Sun, User } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { Bell, Menu, Moon, Search, Sun, LogOut } from "lucide-react"; // Import LogOut icon
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { useTheme } from "next-themes"
+} from "@/components/ui/dropdown-menu";
+import { useTheme } from "next-themes";
 
 interface HeaderProps {
-  toggleSidebar: () => void
+  toggleSidebar: () => void;
 }
 
 export function Header({ toggleSidebar }: HeaderProps) {
-  const { setTheme } = useTheme()
+  const { setTheme } = useTheme();
+
+  // Function to handle logout
+  const handleLogout = () => {
+    // Redirect to the homepage or logout page
+    window.location.href = "http://localhost:3000/";
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -24,7 +30,7 @@ export function Header({ toggleSidebar }: HeaderProps) {
         <Button variant="ghost" size="icon" onClick={toggleSidebar} className="mr-4">
           <Menu className="h-5 w-5" />
         </Button>
-        
+
         <div className="flex-1">
           <form className="hidden md:block">
             <div className="relative">
@@ -37,7 +43,7 @@ export function Header({ toggleSidebar }: HeaderProps) {
             </div>
           </form>
         </div>
-        
+
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" className="relative">
             <Bell className="h-5 w-5" />
@@ -65,11 +71,12 @@ export function Header({ toggleSidebar }: HeaderProps) {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="ghost" size="icon">
-            <User className="h-5 w-5" />
+          {/* Replaced User icon with Logout icon */}
+          <Button variant="ghost" size="icon" onClick={handleLogout}>
+            <LogOut className="h-5 w-5" />
           </Button>
         </div>
       </div>
     </header>
-  )
+  );
 }
